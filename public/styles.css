@@ -1,0 +1,483 @@
+/* --- Styles Personnalisés --- */
+:root {
+  --primary-accent: #ffae00; /* Orange/Jaune des liens */
+  --bg-dark: #1a1a1d; /* Fond très sombre */
+  --bg-card: #212529; /* Fond des éléments */
+  --bg-footer: #23232e;
+  --btn-blue: #4d5bf9; /* Le bleu vif du bouton subscribe */
+}
+
+body {
+  font-family: "Roboto Condensed", sans-serif;
+  background-color: var(--bg-dark);
+  color: #ccc;
+}
+
+/* Top Bar */
+.top-bar {
+  background-color: #151518;
+  padding: 10px 0;
+  border-bottom: 1px solid #333;
+}
+.brand-logo {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.5rem;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+.quote {
+  font-style: italic;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+/* Navigation */
+.navbar {
+  background-color: #1f2024;
+}
+.nav-link {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #fff !important;
+  margin-right: 15px;
+}
+.nav-link:hover {
+  color: var(--primary-accent) !important;
+}
+
+/* Customisation du dropdown sombre */
+.dropdown-menu-dark .dropdown-item:hover {
+  background-color: var(--primary-accent); /* Ton orange/jaune */
+  color: #1a1a1d; /* Texte sombre pour le contraste */
+}
+.dropdown-menu-dark .dropdown-item:hover i {
+  color: #1a1a1d !important; /* Les icônes deviennent sombres au survol */
+}
+
+/* Hero / Header Section */
+.page-header {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=2000&auto=format&fit=crop");
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.page-title {
+  font-family: "Oswald", sans-serif;
+  font-size: 4rem;
+  color: white;
+  line-height: 1;
+}
+
+/* Breadcrumb custom */
+.breadcrumb-item a {
+  color: #ccc;
+  text-decoration: none;
+}
+.breadcrumb-item.active {
+  color: white;
+}
+
+/* Blog Cards */
+.blog-card {
+  border: none;
+  background: transparent;
+}
+.card-img-wrapper {
+  overflow: hidden;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+.card-img-top {
+  transition: transform 0.3s ease;
+  height: 200px;
+  object-fit: cover;
+}
+.blog-card:hover .card-img-top {
+  transform: scale(1.05);
+}
+
+.category-line {
+  display: flex;
+  align-items: center;
+  color: #888;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+}
+.category-line::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #444;
+  margin-left: 10px;
+}
+
+.card-title {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.75rem;
+  color: white;
+  font-weight: 500;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.card-text {
+  color: #888;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.read-more {
+  color: var(--primary-accent);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: color 0.2s;
+}
+
+.yellow {
+  color: var(--primary-accent);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.links {
+  color: var(--primary-accent);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.read-more:hover {
+  color: #ffcc5c;
+}
+.read-more i {
+  margin-right: 5px;
+}
+footer {
+  background-color: var(--bg-footer);
+  color: #b0b0b0; /* Gris clair pour le texte */
+  font-size: 0.95rem;
+  padding-top: 60px;
+}
+
+footer h5 {
+  color: white;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+  letter-spacing: 0.5px;
+}
+
+/* Liens du footer */
+footer ul li {
+  margin-bottom: 12px;
+}
+
+footer a {
+  color: #b0b0b0;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: var(--primary-accent); /* L'orange défini précédemment */
+  padding-left: 5px; /* Petit effet de mouvement pro */
+}
+
+/* Contact Info */
+.contact-list li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+.contact-list i {
+  color: white;
+  margin-top: 5px;
+  min-width: 25px;
+}
+
+/* Social Icons (bas de colonne contact) */
+.footer-socials a {
+  margin-right: 15px;
+  font-size: 1.1rem;
+}
+.footer-socials a:hover {
+  color: white;
+  transform: translateY(-2px); /* Micro-interaction */
+}
+
+/* Formulaire Subscribe */
+.form-control-dark {
+  background-color: #f4f4f4;
+  border: none;
+  border-radius: 2px;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+}
+.form-control-dark:focus {
+  box-shadow: 0 0 0 3px rgba(77, 91, 249, 0.25);
+}
+
+.btn-subscribe {
+  background-color: var(--btn-blue);
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 2px;
+  padding: 10px 25px;
+  font-size: 0.9rem;
+  transition: background 0.3s;
+}
+.btn-subscribe:hover {
+  background-color: #3a47c6;
+  color: white;
+}
+
+/* Copyright bar */
+.copyright-bar {
+  background-color: #1a1a1d; /* Plus sombre que le footer */
+  padding: 20px 0;
+  margin-top: 50px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 0.85rem;
+}
+
+/* Méta-données de l'article */
+.post-meta {
+  color: #888;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 20px;
+}
+.post-meta a {
+  color: var(--primary-accent); /* Orange */
+  text-decoration: none;
+}
+.post-meta span {
+  margin-right: 15px;
+}
+
+/* Contenu de l'article */
+.article-content {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #ccc;
+}
+.article-featured-img {
+  border-radius: 4px;
+  margin: 30px 0;
+  width: 100%;
+  height: auto;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Section Commentaires */
+.comments-area {
+  margin-top: 60px;
+}
+.section-title {
+  font-family: "Oswald", sans-serif;
+  color: white;
+  font-size: 1.75rem;
+  margin-bottom: 30px;
+  border-left: 3px solid var(--primary-accent);
+  padding-left: 15px;
+}
+
+/* Liste des commentaires */
+.comment-item {
+  display: flex;
+  margin-bottom: 30px;
+}
+.comment-avatar img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #333;
+}
+.comment-body {
+  margin-left: 20px;
+}
+.comment-author {
+  color: var(--primary-accent);
+  font-weight: bold;
+  font-family: "Oswald", sans-serif;
+  font-size: 1.1rem;
+}
+.comment-date {
+  font-size: 0.8rem;
+  color: #666;
+  margin-left: 10px;
+}
+.comment-text {
+  color: #bbb;
+  margin-top: 5px;
+  font-size: 0.95rem;
+}
+.comment-reply-link {
+  color: var(--primary-accent);
+  font-size: 0.85rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+/* Indentation pour les réponses (Threaded comments) */
+.comment-item.reply {
+  margin-left: 80px; /* Décalage vers la droite */
+  border-left: 1px solid #333;
+  padding-left: 20px;
+}
+
+/* Formulaire "Leave a Comment" */
+.comment-form input,
+.comment-form textarea {
+  background-color: #f4f4f4; /* Fond clair comme sur l'image */
+  border: none;
+  color: #333;
+  border-radius: 2px;
+  padding: 12px 15px;
+  font-size: 0.9rem;
+}
+.comment-form input:focus,
+.comment-form textarea:focus {
+  background-color: #fff;
+  box-shadow: 0 0 0 3px rgba(77, 91, 249, 0.25);
+  outline: none;
+}
+.comment-form label {
+  color: #888;
+  font-size: 0.85rem;
+  margin-bottom: 5px;
+}
+
+/* Bouton Bleu Spécifique */
+.btn-submit-comment {
+  background-color: var(--btn-blue);
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 2px;
+}
+.btn-submit-comment:hover {
+  background-color: #3a47c6;
+  color: white;
+}
+
+/* --- Section Contact Form --- */
+.contact-section {
+  background-color: #1a1a1d; /* Fond global sombre */
+  color: #ccc;
+}
+
+.contact-title {
+  font-family: "Oswald", sans-serif;
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.contact-desc {
+  margin: 5px auto;
+  color: #888;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  max-width: 800px;
+  text-align: center;
+}
+
+/* Style des Inputs (Fond clair sur page sombre) */
+.form-label-custom {
+  color: #6c757d;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+  font-weight: 400;
+}
+
+.form-control-light {
+  background-color: #f4f4f6; /* Gris très clair légèrement bleuté */
+  border: none;
+  border-radius: 3px;
+  padding: 12px 15px;
+  color: #333;
+  height: 50px; /* Hauteur confortable */
+  font-size: 1rem;
+}
+
+.form-control-light:focus {
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(77, 91, 249, 0.25); /* Focus bleu */
+  outline: none;
+}
+
+textarea.form-control-light {
+  height: auto; /* Pour le textarea, on laisse la hauteur auto définie par les rows */
+}
+
+/* Bouton Principal */
+.btn-send {
+  background-color: #4d5bf9; /* Le bleu "Science" */
+  color: white;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 3px;
+  transition: background 0.3s ease;
+}
+.btn-send:hover {
+  background-color: #3a47c6;
+  color: white;
+}
+
+/* Bouton Messenger Rond */
+.btn-messenger {
+  width: 45px;
+  height: 45px;
+  background-color: #4d5bf9;
+  color: white;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: transform 0.2s;
+  font-size: 1.2rem;
+}
+.btn-messenger:hover {
+  background-color: #3a47c6;
+  color: white;
+  transform: scale(1.1);
+}
+
+.separator-text {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 0 15px;
+}

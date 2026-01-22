@@ -1,0 +1,5 @@
+2026-01-21 09:49:45 : SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicata du champ 'k.urbain.personnel@gmail.com' pour la clef 'users.email', errorCode=23000
+2026-01-21 09:50:38 : SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicata du champ 'k.urbain.personnel@gmail.com' pour la clef 'users.email', errorCode=23000
+2026-01-21 09:50:51 : SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicata du champ 'k.urbain.personnel@gmail.com' pour la clef 'users.email', errorCode=23000
+2026-01-21 09:51:18 : SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicata du champ 'k.urbain.personnel@gmail.com' pour la clef 'users.email', errorCode=23000
+2026-01-21 20:11:32 : SQLSTATE[42S22]: Column not found: 1054 Champ 'is_published' inconnu dans where clause, errorCode=42S22

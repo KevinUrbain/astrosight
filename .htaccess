@@ -1,0 +1,21 @@
+Options -Indexes
+Options +FollowSymLinks
+RewriteEngine On
+
+# Définit la racine du projet pour la réécriture
+# Si ton site est dans un dossier "astrosight", on le précise ici.
+RewriteBase /astrosight/
+
+# Règle 1 : Ne pas toucher aux vrais fichiers (images, css, js)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Règle 2 : Tout le reste est redirigé vers index.php
+# On capture la fin de l'URL ($1) et on la met dans ?page=...
+RewriteRule ^(.*)$ index.php?page=$1 [QSA,L]
+
+#L'utilisateur tape par exemple : http://localhost/astrosight/about
+#Le .htaccess transforme cela en interne en : index.php?page=about
+
+#Les anciens URL :<a href="<?= BASE_URL ?>?page=about">À propos</a>
+#Les nouveaux URL deviennent : <a href="<?= BASE_URL ?>/about">À propos</a>

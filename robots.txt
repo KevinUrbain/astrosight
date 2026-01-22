@@ -1,0 +1,21 @@
+User-agent: *
+# On interdit l'accès aux dossiers techniques
+Disallow: /config/
+Disallow: /controllers/
+Disallow: /functions/
+Disallow: /templates/
+Disallow: /views/
+Disallow: /log/
+
+# On interdit les pages d'administration
+Disallow: /admin/
+Disallow: /dashboard
+Disallow: /admin-list-posts
+Disallow: /admin-edit-user
+Disallow: /admin-delete-user
+
+# On autorise tout le reste
+Allow: /
+
+# Indiquer l'emplacement du Sitemap (Optionnel pour plus tard)
+# Sitemap: https://www.site-exemple.com/sitemap.xml
