@@ -9,7 +9,7 @@
     
     $seoTitle = isset($titleSite) ? $titleSite : 'AstroSight - Communauté Astronomie';
     $seoDesc = "Rejoignez AstroSight, la plateforme communautaire pour partager vos astrophotographies, échanger sur le matériel et explorer le ciel.";
-    $seoImage = BASE_URL . '/public/uploads/favicon/moon-solid-full.png';
+    $seoImage = BASE_URL . '/public/assets/favicon/moon-solid-full.png';
 
     // Si POST (Détail)
     if (isset($post) && !empty($post)) {
@@ -51,9 +51,9 @@
     <meta name="twitter:description" content="<?= $seoDesc ?>">
     <meta name="twitter:image" content="<?= $seoImage ?>">
 
-    <link rel="icon" type="image/svg+xml" href="<?= BASE_URL ?>/public/uploads/favicon/moon-solid-full.svg">
-    <link rel="icon" type="image/png" href="<?= BASE_URL ?>/public/uploads/favicon/moon-solid-full.png">
-    <link rel="apple-touch-icon" href="<?= BASE_URL ?>/public/uploads/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/svg+xml" href="<?= BASE_URL ?>/public/assets/favicon/moon-solid-full.svg">
+    <link rel="icon" type="image/png" href="<?= BASE_URL ?>/public/assets/favicon/moon-solid-full.png">
+    <link rel="apple-touch-icon" href="<?= BASE_URL ?>/public/assets/favicon/apple-touch-icon.png">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
@@ -77,8 +77,8 @@
         ];
         ?>
         <script type="application/ld+json">
-                        <?= json_encode($schemaData, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT); ?>
-                </script>
+                            <?= json_encode($schemaData, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT); ?>
+                    </script>
     <?php endif; ?>
 
 </head>
