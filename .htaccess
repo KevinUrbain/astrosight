@@ -1,28 +1,10 @@
 Options -Indexes
-Options +FollowSymLinks
 RewriteEngine On
-
-# Sur le vrai site, la base est la racine "/"
 RewriteBase /
 
-
-# Interdit l'accès direct aux dossiers de code
-<IfModule mod_authz_core.c>
-    <DirectoryMatch "^(config|controllers|models|views|templates|logs)">
-        Require all denied
-    </DirectoryMatch>
-</IfModule>
-
-# Interdit l'accès aux fichiers cachés (.git, .env) et au fichier SQL
-<FilesMatch "^\.|^.*\.sql$">
-    Order allow,deny
-    Deny from all
-</FilesMatch>
-
-
-# Ne pas toucher aux vrais fichiers existants (images, css, js)
+# Si le fichier ou dossier existe, on ne fait rien
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
-# Tout le reste va vers index.php
+# Sinon on redirige tout vers index.php
 RewriteRule ^(.*)$ index.php?page=$1 [QSA,L]
