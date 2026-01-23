@@ -1,14 +1,11 @@
-# SÉCURITÉ ET ROUTAGE PRODUCTION
-
 Options -Indexes
 Options +FollowSymLinks
 RewriteEngine On
 
-
 # Sur le vrai site, la base est la racine "/"
 RewriteBase /
 
-# --- CORRECTION 2 : La Sécurité (INDISPENSABLE car index.php est à la racine) ---
+
 # Interdit l'accès direct aux dossiers de code
 <IfModule mod_authz_core.c>
     <DirectoryMatch "^(config|controllers|models|views|templates|logs)">
