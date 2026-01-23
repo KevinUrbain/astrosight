@@ -1,21 +1,31 @@
+# SÉCURITÉ ET ROUTAGE PRODUCTION
+
 Options -Indexes
 Options +FollowSymLinks
 RewriteEngine On
 
-# Définit la racine du projet pour la réécriture
-# Si ton site est dans un dossier "astrosight", on le précise ici.
-RewriteBase /astrosight/
+# --- CORRECTION 1 : La Base ---
+# Sur le vrai site, la base est la racine "/" et non "/astrosight/"
+RewriteBase /
 
-# Règle 1 : Ne pas toucher aux vrais fichiers (images, css, js)
+# --- CORRECTION 2 : La Sécurité (INDISPENSABLE car index.php est à la racine) ---
+# Interdit l'accès direct aux dossiers de code
+<IfModule mod_authz_core.c>
+    <DirectoryMatch "^(config|controllers|models|views|templates|logs)">
+        Require all denied
+    </DirectoryMatch>
+</IfModule>
+
+# Interdit l'accès aux fichiers cachés (.git, .env) et au fichier SQL
+<FilesMatch "^\.|^.*\.sql$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# --- ROUTAGE (Ce que vous aviez déjà) ---
+# Ne pas toucher aux vrais fichiers existants (images, css, js)
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
-# Règle 2 : Tout le reste est redirigé vers index.php
-# On capture la fin de l'URL ($1) et on la met dans ?page=...
+# Tout le reste va vers index.php
 RewriteRule ^(.*)$ index.php?page=$1 [QSA,L]
-
-#L'utilisateur tape par exemple : http://localhost/astrosight/about
-#Le .htaccess transforme cela en interne en : index.php?page=about
-
-#Les anciens URL :<a href="<?= BASE_URL ?>?page=about">À propos</a>
-#Les nouveaux URL deviennent : <a href="<?= BASE_URL ?>/about">À propos</a>
