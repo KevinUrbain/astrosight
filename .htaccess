@@ -4,8 +4,8 @@ Options -Indexes
 Options +FollowSymLinks
 RewriteEngine On
 
-# --- CORRECTION 1 : La Base ---
-# Sur le vrai site, la base est la racine "/" et non "/astrosight/"
+
+# Sur le vrai site, la base est la racine "/"
 RewriteBase /
 
 # --- CORRECTION 2 : La Sécurité (INDISPENSABLE car index.php est à la racine) ---
@@ -22,7 +22,7 @@ RewriteBase /
     Deny from all
 </FilesMatch>
 
-# --- ROUTAGE (Ce que vous aviez déjà) ---
+
 # Ne pas toucher aux vrais fichiers existants (images, css, js)
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
