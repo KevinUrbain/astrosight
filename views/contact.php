@@ -22,8 +22,7 @@
                         <div class="ms-3">
                             <h6 class="fw-bold mb-1">Siège AstroSight</h6>
                             <p class="text-white-50 mb-0">
-                                Avenue de la Voie Lactée, 42<br>
-                                6000 Charleroi (Belgique)
+                                /
                             </p>
                         </div>
                     </div>
