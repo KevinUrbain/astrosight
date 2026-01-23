@@ -396,7 +396,7 @@ footer a:hover {
   color: white;
   font-size: 2.5rem;
   margin-bottom: 20px;
-  text-transform: capitalize;
+  text-transform: none;
   text-align: center;
 }
 
