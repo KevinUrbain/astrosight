@@ -40,22 +40,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors[] = "Votre message est trop court.";
     }
 
-    //  Simulation d'envoi d'email
+    //  Envoi d'email
     if (empty($errors)) {
-        /*
-        Ici, on simule le succès pour l'expérience utilisateur.
-        */
+        require_once __DIR__ . '/../services/MailerService.php';
 
-        // Exemple de code natif (commenté) :
-        // $to = "email@gmail.com";
-        // $headers = "From: " . $email;
-        // mail($to, $subject, $message, $headers);
+        //n tente l'envoi
+        if (MailerService::sendContactEmail($email, $name, $message, $subject)) {
 
-        $success = "Merci " . htmlspecialchars($name) . " ! Votre message a bien été transmis à l'équipe AstroSight. Nous vous répondrons sous 48h.";
+            // SUCCÈS
+            $success = "Merci " . htmlspecialchars($name) . " ! Votre message a bien été transmis. Nous vous répondrons sous 48h.";
 
-        if (!isset($_SESSION['user'])) {
-            $name = $email = '';
+            // On vide le formulaire uniquement si ça a marché
+            if (!isset($_SESSION['user'])) {
+                $name = $email = '';
+            }
+            $subject = $message = '';
+
+        } else {
+            $errors[] = "Une erreur technique est survenue lors de l'envoi. Veuillez réessayer plus tard.";
         }
-        $subject = $message = '';
     }
 }
