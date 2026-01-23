@@ -112,7 +112,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <p class="m-0">
-                        © <?= date('Y'); ?> All rights reserved.
+                        © <?= date('Y'); ?> Tous droits réservés.
                     </p>
                 </div>
             </div>

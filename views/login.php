@@ -1,7 +1,7 @@
 <section class="contact-section pb-5">
     <div class="container">
 
-        <h2 class="contact-title">Se Connecter</h2>
+        <h2 class="contact-title">Se connecter</h2>
         <p class="contact-desc">
             Rejoignez la communauté d'observateurs AstroSight. Connectez-vous pour
             <strong class="text-light">partager vos propres clichés astronomiques</strong>, documenter vos observations
