@@ -34,7 +34,7 @@
                         </div>
                         <div class="ms-3">
                             <h6 class="fw-bold mb-1">Email</h6>
-                            <p class="text-white-50 mb-0">kevin.urbain.pro@gmail.com</p>
+                            <p class="text-white-50 mb-0">contact@astrosight.be</p>
                         </div>
                     </div>
 
