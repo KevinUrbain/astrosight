@@ -55,7 +55,7 @@
                 </div>
 
                 <?php if (!empty($galleryImages)): ?>
-                    <h3 class="text-white mt-5 mb-4 border-bottom pb-2 border-secondary">Galerie d'images</h3>
+                    <h3 class="text-white mt-5 mb-4 border-bottom pb-2 border-secondary">Galerie</h3>
                     <div class="row g-3">
                         <?php foreach ($galleryImages as $img): ?>
                             <?php if ($img !== $post['featured_image']): ?>
