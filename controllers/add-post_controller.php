@@ -152,7 +152,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             $pdo->commit();
 
-            header('Location: ' . BASE_URL . '/my-posts?success=1');
+            header('Location: ' . BASE_URL . '/my-posts?success=created_pending');
             exit();
 
         } catch (PDOException $e) {

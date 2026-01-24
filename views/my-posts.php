@@ -10,8 +10,34 @@
                 </a>
             </div>
 
-            <?php if (isset($_GET['success'])): ?>
-                <div class="alert alert-success">Action effectuée avec succès !</div>
+            <?php if (isset($_GET['success'])) : ?>
+                <?php
+                $message = '';
+                switch ($_GET['success']) {
+                    case 'updated_pending':
+                        $message = "Votre publication a été mise à jour et est maintenant en attente de relecture par un administrateur avant d'être visible.";
+                        break;
+                    case 'created_pending':
+                        $message = "Votre publication a été créée avec succès ! Elle est maintenant en attente de relecture par un administrateur avant d'être visible.";
+                        break;
+                    case 'drafted':
+                        $message = "Votre publication a bien été passée en brouillon.";
+                        break;
+                    case 'deleted':
+                        $message = "Votre publication a été supprimée.";
+                        break;
+                    default:
+                        $message = "Action effectuée avec succès !";
+                        break;
+                }
+                ?>
+                <div class="alert alert-success"><?= $message ?></div>
+            <?php endif; ?>
+
+            <?php if (isset($_GET['error']) && $_GET['error'] === 'auth') : ?>
+                <div class="alert alert-danger">
+                    Vous n'avez pas les autorisations nécessaires pour effectuer cette action.
+                </div>
             <?php endif; ?>
 
             <?php if (empty($posts)): ?>
