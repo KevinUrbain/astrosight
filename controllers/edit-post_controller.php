@@ -68,6 +68,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (isset($_POST['is_deleted'])) {
             $is_deleted = intval($_POST['is_deleted']);
         }
+    } else {
+        $status_post = 0;
+        $is_deleted = $post['is_deleted'];
     }
 
     if (empty($title) || empty($content)) {
@@ -191,7 +194,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if ($isAdmin) {
                 header('Location: ' . BASE_URL . '/?page=admin-list-posts&success=updated');
             } else {
-                header('Location: ' . BASE_URL . '/my-posts?success=updated');
+                header('Location: ' . BASE_URL . '/my-posts?success=updated_pending');
             }
             exit();
 
