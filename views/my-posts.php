@@ -65,7 +65,8 @@
                                                 </a>
                                             <?php else: ?>
                                                 <a href="<?= BASE_URL ?>/delete-post?id=<?= $post['id'] ?>&action=publish"
-                                                    class="btn btn-sm btn-outline-success me-1" title="Publier maintenant">
+                                                    class="btn btn-sm btn-outline-success me-1" title="Publier maintenant"
+                                                    style="<?= $isAdmin ? '' : 'display:none;' ?>">
                                                     <i class="fas fa-check"></i>
                                                 </a>
                                             <?php endif; ?>

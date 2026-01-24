@@ -11,6 +11,8 @@ if (!isset($_SESSION['user'])) {
     exit();
 }
 
+$isAdmin = isset($_SESSION['user']['role']) && $_SESSION['user']['role'] === 'admin';
+
 
 $sql = "SELECT id, title, category, created_at, status_post, featured_image, slug 
         FROM posts 

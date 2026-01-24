@@ -44,9 +44,15 @@ if ($post) {
 
     } elseif ($action === 'publish') {
         // CAS 2 : PUBLIER
-        $updateStmt = $pdo->prepare("UPDATE posts SET status_post = 1 WHERE id = :id");
-        $updateStmt->execute([':id' => $postId]);
-        $msg = "published";
+        if ($isAdmin) {
+            $updateStmt = $pdo->prepare("UPDATE posts SET status_post = 1 WHERE id = :id");
+            $updateStmt->execute([':id' => $postId]);
+            $msg = "published";
+        } else {
+            // Un non-admin ne peut pas publier.
+            header('Location: ' . BASE_URL . '/my-posts?error=auth');
+            exit();
+        }
 
     } else {
         // CAS 3 : SUPPRIMER (is_deleted = 1) - Comportement par défaut
