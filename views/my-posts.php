@@ -10,7 +10,7 @@
                 </a>
             </div>
 
-            <?php if (isset($_GET['success'])) : ?>
+            <?php if (isset($_GET['success'])): ?>
                 <?php
                 $message = '';
                 switch ($_GET['success']) {
@@ -34,7 +34,7 @@
                 <div class="alert alert-success"><?= $message ?></div>
             <?php endif; ?>
 
-            <?php if (isset($_GET['error']) && $_GET['error'] === 'auth') : ?>
+            <?php if (isset($_GET['error']) && $_GET['error'] === 'auth'): ?>
                 <div class="alert alert-danger">
                     Vous n'avez pas les autorisations nécessaires pour effectuer cette action.
                 </div>
