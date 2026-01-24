@@ -66,6 +66,7 @@
 
     <?php if (isset($post) && !empty($post)):
         // On construit un tableau PHP propre
+        //JSON-LD
         $schemaData = [
             "@context" => "https://schema.org",
             "@type" => "Article",
@@ -79,8 +80,8 @@
         ];
         ?>
         <script type="application/ld+json">
-                                                                    <?= json_encode($schemaData, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT); ?>
-                                                            </script>
+                                                                        <?= json_encode($schemaData, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT); ?>
+                                                                </script>
     <?php endif; ?>
 
 </head>
