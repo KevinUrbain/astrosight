@@ -9,7 +9,7 @@
     
     $seoTitle = isset($titleSite) ? $titleSite : 'AstroSight - Communauté Astronomie';
     $seoDesc = "Rejoignez AstroSight, la plateforme communautaire pour partager vos astrophotographies, échanger sur le matériel et explorer le ciel.";
-    $seoImage = BASE_URL . '/public/assets/favicon/moon-solid-full.png';
+    $seoImage = BASE_URL . '/public/assets/img/moon-solid-full.png';
 
     // Si POST (Détail)
     if (isset($post) && !empty($post)) {
@@ -44,6 +44,8 @@
     <meta property="og:title" content="<?= $seoTitle ?>">
     <meta property="og:description" content="<?= $seoDesc ?>">
     <meta property="og:image" content="<?= $seoImage ?>">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:site_name" content="AstroSight">
 
     <meta name="twitter:card" content="summary_large_image">
@@ -77,8 +79,8 @@
         ];
         ?>
         <script type="application/ld+json">
-                            <?= json_encode($schemaData, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT); ?>
-                    </script>
+                                            <?= json_encode($schemaData, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT); ?>
+                                    </script>
     <?php endif; ?>
 
 </head>
