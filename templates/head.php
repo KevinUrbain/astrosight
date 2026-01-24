@@ -9,7 +9,7 @@
     
     $seoTitle = isset($titleSite) ? $titleSite : 'AstroSight - Communauté Astronomie';
     $seoDesc = "Rejoignez AstroSight, la plateforme communautaire pour partager vos astrophotographies, échanger sur le matériel et explorer le ciel.";
-    $seoImage = BASE_URL . '/public/assets/img/moon-solid-full.png';
+    $seoImage = BASE_URL . '/public/assets/img/social-share-astrosight.jpg';
 
     // Si POST (Détail)
     if (isset($post) && !empty($post)) {
@@ -79,8 +79,8 @@
         ];
         ?>
         <script type="application/ld+json">
-                                            <?= json_encode($schemaData, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT); ?>
-                                    </script>
+                                                                    <?= json_encode($schemaData, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT); ?>
+                                                            </script>
     <?php endif; ?>
 
 </head>
