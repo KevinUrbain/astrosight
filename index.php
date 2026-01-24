@@ -100,7 +100,7 @@ $contentTitle = '';
 switch ($page) {
     case 'home':
         $titlePage = 'Accueil';
-        $titleSite = 'AstroSight - Accueil';
+        $titleSite = "AstroSight - Plateforme communautaire d'astronomes amateurs et professionnels";
         $contentTitle = "Contribuez à la carte du ciel. Rejoignez le réseau d'astronomes amateurs.";
         break;
     case 'about':
