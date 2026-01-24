@@ -44,13 +44,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($errors)) {
         require_once __DIR__ . '/../services/MailerService.php';
 
-        //n tente l'envoi
+
         if (MailerService::sendContactEmail($email, $name, $message, $subject)) {
 
-            // SUCCÈS
-            $success = "Merci " . htmlspecialchars($name) . " ! Votre message a bien été transmis. Nous vous répondrons sous 48h.";
+            if (!isset($_SESSION['user'])) {
+                $name = $email = '';
+            }
+            $subject = $message = '';
 
-            // On vide le formulaire uniquement si ça a marché
+            $_SESSION['flash_success'] = "Merci " . htmlspecialchars($name) . " ! Votre message a bien été transmis. Nous vous répondrons sous 48h.";
+            header("Location: " . $_SERVER['REQUEST_URI']);
+            exit();
+
             if (!isset($_SESSION['user'])) {
                 $name = $email = '';
             }

@@ -71,11 +71,11 @@
                         </div>
                     <?php endif; ?>
 
-                    <?php if ($success): ?>
+                    <?php if (isset($_SESSION['flash_success'])): ?>
                         <div class="alert alert-success d-flex align-items-center">
                             <i class="fas fa-check-circle me-2 fs-4"></i>
                             <div>
-                                <?= $success ?>
+                                <?= $_SESSION['flash_success'] ?>
                             </div>
                         </div>
                     <?php endif; ?>
