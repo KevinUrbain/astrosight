@@ -104,11 +104,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $sqlPost = "INSERT INTO posts (
                 user_id, title, slug, content, category, featured_image,
                 telescope, mount, camera, filters, 
-                exposure_time, exposure_count, gain_iso, soft_processing, bortle_scale, country, city, focal_length, diameter
+                exposure_time, exposure_count, gain_iso, soft_processing, bortle_scale, country, city, focal_length, diameter, status_post
             ) VALUES (
                 :uid, :title, :slug, :content, :cat, :feat,
                 :tele, :mount, :cam, :filt,
-                :exp_t, :exp_c, :iso, :soft, :bortle, :country, :city, :focal_length, :diameter
+                :exp_t, :exp_c, :iso, :soft, :bortle, :country, :city, :focal_length, :diameter, :status_post
             )";
 
             $stmt = $pdo->prepare($sqlPost);
@@ -131,7 +131,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 ':country' => $country,
                 ':city' => $city,
                 ':focal_length' => $focal_length,
-                ':diameter' => $diameter
+                ':diameter' => $diameter,
+                ':status_post' => 0 //0 = en attente de validation par l'admin
             ]);
 
             $postId = $pdo->lastInsertId();
