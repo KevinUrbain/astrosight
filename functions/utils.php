@@ -39,3 +39,30 @@ function excerpt(string $text, int $limit = 100): string
 
     return $text . '...';
 }
+
+/**
+ * Transforme une chaîne de caractères en "slug" SEO-friendly.
+ * @param string $text
+ * @return string
+ */
+function slugify(string $text): string
+{
+    // Remplace les caractères non-alphanumériques par des tirets
+    $text = preg_replace('~[^\pL\d]+~u', '-', $text);
+    // Translittère
+    $text = iconv('utf-8', 'us-ascii//TRANSLIT', $text);
+    // Supprime les caractères non désirés
+    $text = preg_replace('~[^-\w]+~', '', $text);
+    // Coupe les espaces au début et à la fin
+    $text = trim($text, '-');
+    // Supprime les tirets en double
+    $text = preg_replace('~-+~', '-', $text);
+    // Met en minuscule
+    $text = strtolower($text);
+
+    if (empty($text)) {
+        return 'n-a';
+    }
+
+    return $text;
+}

@@ -130,4 +130,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-$titlePage = "Modifier mon profil";

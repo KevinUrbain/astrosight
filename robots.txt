@@ -1,21 +1,12 @@
+# Indique aux robots d'exploration (comme Googlebot) quelles pages ou fichiers ils peuvent ou ne peuvent pas demander à votre site.
+
 User-agent: *
-# On interdit l'accès aux dossiers techniques
-Disallow: /config/
+
+# Bloquer l'accès aux répertoires sensibles ou non pertinents pour le SEO
+Disallow: /admin
 Disallow: /controllers/
-Disallow: /functions/
-Disallow: /templates/
-Disallow: /views/
-Disallow: /log/
+Disallow: /config/
+Disallow: /vendor/
 
-# On interdit les pages d'administration
-Disallow: /admin/
-Disallow: /dashboard
-Disallow: /admin-list-posts
-Disallow: /admin-edit-user
-Disallow: /admin-delete-user
-
-# On autorise tout le reste
-Allow: /
-
-# Indiquer l'emplacement du Sitemap (Optionnel pour plus tard)
-# Sitemap: https://www.site-exemple.com/sitemap.xml
+# Indiquer l'emplacement du sitemap (remplacez par votre URL de production)
+Sitemap: https://astrosight.be

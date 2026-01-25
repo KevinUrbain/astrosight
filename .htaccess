@@ -1,6 +1,11 @@
 Options -Indexes
 RewriteEngine On
-RewriteBase /
+RewriteBase /astrosight/
+# Rewrite Base / => en prod | Rewrite Base /astrosight/ => en local
+
+
+# Règle pour le sitemap
+RewriteRule ^sitemap\.xml$ sitemap.php [L]
 
 # Si le fichier ou dossier existe, on ne fait rien
 RewriteCond %{REQUEST_FILENAME} !-f

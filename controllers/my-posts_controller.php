@@ -23,4 +23,4 @@ $stmt = $pdo->prepare($sql);
 $stmt->execute([':uid' => $_SESSION['user']['id']]);
 $posts = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-$titlePage = "Mes publications";
+

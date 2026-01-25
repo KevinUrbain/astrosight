@@ -99,7 +99,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $allowed = ['jpg', 'jpeg', 'png', 'webp'];
 
             if (in_array($fileExt, $allowed) && $fileError === 0) {
-                $newFileName = uniqid() . '-' . basename($fileName);
+                // On crée un nom de fichier "propre" pour le SEO à partir du nom original
+                $safeFileName = slugify(pathinfo($fileName, PATHINFO_FILENAME));
+                $newFileName = uniqid() . '-' . $safeFileName . '.' . $fileExt;
                 if (move_uploaded_file($fileTmp, $targetDir . $newFileName)) {
                     $uploadedImages[] = $newFileName;
                 }

@@ -30,7 +30,6 @@ $stmt = $pdo->prepare($sql);
 $stmt->execute($params);
 $posts = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-$titlePage = "Accueil";
 if ($search) {
         $titlePage = "Recherche : " . htmlspecialchars($search);
 }

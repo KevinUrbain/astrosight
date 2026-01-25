@@ -37,7 +37,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         } elseif (!in_array($avatar['type'], $allowedTypes)) {
             $errors[] = "Format non autorisé: png, jpeg, gif uniquement.";
         } else {
-            $newFilename = uniqid() . '_' . basename($avatar['name']);
+            // On crée un nom de fichier "propre" pour le SEO
+            $safeFilename = slugify(pathinfo($avatar['name'], PATHINFO_FILENAME));
+            $extension = pathinfo($avatar['name'], PATHINFO_EXTENSION);
+            $newFilename = uniqid() . '_' . $safeFilename . '.' . $extension;
             $destination = $uploadDir . $newFilename;
 
             if (move_uploaded_file($avatar['tmp_name'], $destination)) {

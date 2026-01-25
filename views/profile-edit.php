@@ -4,7 +4,7 @@
 
             <div class="card bg-dark border-secondary text-white">
                 <div class="card-header border-secondary">
-                    <h1 class="h3 mb-0"><i class="fas fa-user-edit me-2"></i>Modifier mon profil</h1>
+                    <h2 class="h3 mb-0"><i class="fas fa-user-edit me-2"></i>Modifier mon profil</h2>
                 </div>
 
                 <div class="card-body p-4">

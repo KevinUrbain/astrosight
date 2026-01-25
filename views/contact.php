@@ -1,7 +1,7 @@
 <div class="container py-5">
 
     <div class="text-center mb-5">
-        <h1 class="display-4 fw-bold text-white">Contactez-nous</h1>
+        <h2 class="display-4 fw-bold text-white">Contactez-nous</h2>
         <p class="lead text-white-50">Une question sur le matériel ? Une suggestion pour le site ? <br>L'espace est
             vaste, mais nous sommes à portée de clic.</p>
     </div>

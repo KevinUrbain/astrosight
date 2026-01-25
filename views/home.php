@@ -4,7 +4,7 @@
 
     <div class="row mb-5 align-items-center">
         <div class="col-md-6">
-            <h1 class="text-white fw-bold">Dernières observations</h1>
+            <h2 class="text-white fw-bold">Dernières observations</h2>
             <p class="text-white-50">Explorez l'univers à travers les yeux de la communauté.</p>
         </div>
         <div class="col-md-6">
