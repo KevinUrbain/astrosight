@@ -36,7 +36,7 @@
                     </li>
                     <li>
                         <i class="far fa-envelope"></i>
-                        <a href="mailto:kevin.urbain.pro@gmail.com">Envoyer un mail</a>
+                        <a href="mailto:kevin.urbain.pro@gmail.com">Contactez le développeur</a>
                     </li>
                 </ul>
                 <div class="footer-socials mt-3">
