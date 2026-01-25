@@ -1,6 +1,6 @@
 Options -Indexes
 RewriteEngine On
-RewriteBase /astrosight/
+RewriteBase /
 # Rewrite Base / => en prod | Rewrite Base /astrosight/ => en local
 
 
